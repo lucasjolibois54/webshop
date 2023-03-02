@@ -29,8 +29,8 @@ function Home() {
                     <div className="product-card" key={product.title}>
 
                     <a href="#" class="group">
-                        <div class="aspect-w-1 aspect-h-1 h-46 overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
-                            <img src={product.filename} alt={product.title} class="h-full w-full object-cover object-center group-hover:opacity-75"/>
+                        <div class="aspect-w-1 aspect-h-1 h-96 overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
+                            <img src={product.filename} alt={product.title} class="h-96 w-full object-cover object-center group-hover:opacity-75"/>
                         </div>
                     <h3 class="mt-4 text-sm text-gray-700">{product.title}</h3>
                     <p class="mt-1 text-lg font-medium text-gray-900">DKK.{product.price}</p>
