@@ -2,10 +2,17 @@ import React from 'react'
 import Nav from '../Components/Nav'
 import { useState, useEffect } from 'react';
 import { Link, Outlet } from 'react-router-dom'
+import { addCart } from '../redux/action';
+import { useDispatch } from 'react-redux';
 
 
 function Home() {
     const [products, setproducts] = useState([]);
+
+    const dispatch= useDispatch();
+    const addProduct = (product)=>{
+        dispatch(addCart(product))
+    }
     useEffect(() => {
        fetch('https://api4286.s3.ap-south-1.amazonaws.com/products.json')
           .then((response) => response.json())
@@ -29,13 +36,13 @@ function Home() {
                 return (
                     <div className="product-card" key={product.title}>
 
-                    <Link to="/product-page" className="group">
+                    
                         <div className="aspect-w-1 aspect-h-1 h-96 overflow-hidden rounded-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8">
                             <img src={product.filename} alt={product.title} className="h-96 w-full object-cover object-center group-hover:opacity-75"/>
                         </div>
                     <h3 className="mt-4 text-sm text-gray-700">{product.title}</h3>
                     <p className="mt-1 text-lg font-medium text-gray-900">DKK.{product.price}</p>
-                    </Link>   
+                    <button onClick={()=>addProduct(product)}>Add</button>
                     </div>
                 );
             })}
