@@ -4,7 +4,7 @@ import { Link, Outlet } from 'react-router-dom'
 function Nav() {
   return (
     <>
-    <Link to="/product-page" className='underline text-red-800 italic font-normal'>Product Page</Link>
+    <Link to="/cart" className='underline text-red-800 italic font-normal'>cart</Link>
     <Outlet/>
     </>
   )
