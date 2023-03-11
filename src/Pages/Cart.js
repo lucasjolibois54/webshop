@@ -53,7 +53,7 @@ function Cart() {
     <div className='mx-auto max-w-2xl mt-10 px-4 sm:px-6 lg:max-w-7xl lg:px-8'>
       {state.length === 0 && emptyCart()}
       <div className="container mx-auto mt-10">
-    <div className="flex shadow-md my-10">
+    <div className="flex my-10">
       <div className="w-full md:w-3/4 bg-white px-10 py-10">
         <div className="flex justify-between border-b pb-8">
           <h1 className="font-semibold text-2xl">Shopping Cart</h1>
