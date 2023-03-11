@@ -1,13 +1,12 @@
 import React from 'react'
 import { addCart } from '../redux/action'
 import Nav from '../Components/Nav'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { Link, Outlet } from 'react-router-dom'
 
 function Cart() {
 
   const state = useSelector((state) => state.handleCart);
-  const dispatch = useDispatch();
 
   const getCartTotal = () => {
     let total = 0;
@@ -16,10 +15,6 @@ function Cart() {
     }
     return total;
   }
-
-  const handleAdd = (item) => {
-    dispatch(addCart(item));
-  };
 
   const emptyCart = () => {
     return (
