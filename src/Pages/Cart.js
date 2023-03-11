@@ -1,5 +1,6 @@
 import React from 'react'
 import { addCart } from '../redux/action'
+import Nav from '../Components/Nav'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link, Outlet } from 'react-router-dom'
 
@@ -50,6 +51,8 @@ function Cart() {
   }
 
   return (
+    <>
+    <Nav/>
     <div className='mx-auto max-w-2xl mt-10 px-4 sm:px-6 lg:max-w-7xl lg:px-8'>
       {state.length === 0 && emptyCart()}
       <div className="container mx-auto mt-10">
@@ -68,13 +71,12 @@ function Cart() {
         <div>{state.length !== 0 && state.map(cartItems)}</div>
 
         <Link to="/"  className="flex font-semibold text-gray-600 text-sm mt-10">
-      
           <svg className="fill-current mr-2 text-gray-600 w-4" viewBox="0 0 448 512"><path d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z"/></svg>
           Continue Shopping
         </Link>
       </div>
 
-      <div id="summary" className="w-1/4 px-8 py-10 hidden md:block">
+      <div className="w-1/4 px-8 py-10 hidden md:block">
         <h1 className="font-semibold text-2xl border-b pb-8">Order Summary</h1>
         <div className="flex justify-between mt-10 mb-5">
           <span className="font-semibold text-sm uppercase">Items</span>
@@ -91,7 +93,7 @@ function Cart() {
             <span>Total cost</span>
             <span>{ getCartTotal()+10 }.- DKK</span>
           </div>
-          <button className="bg-red-500 font-semibold hover:bg-red-600 py-3 text-sm rounded-xl text-white uppercase w-full">Checkout Unavailable</button>
+          <button className="cursor-not-allowed bg-red-500 font-semibold hover:bg-red-600 py-3 text-sm rounded-xl text-white uppercase w-full">Checkout Unavailable</button>
         </div>
       </div>
 
@@ -99,6 +101,7 @@ function Cart() {
   </div>
   <Outlet/>
     </div>
+    </>
   )
 }
 
