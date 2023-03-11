@@ -5,7 +5,8 @@ function Nav() {
   return (
     <>
     <div className="mx-auto max-w-2xl mt-10 sm:px-6 lg:max-w-7xl lg:px-8">
-    <Link to="/cart" className='underline text-red-800 italic font-normal'>cart</Link>
+      <h2 className='mt-10 font-bold text-2xl'>FoodParadise</h2>
+    <Link to="/cart" className='-mt-4 underline text-red-800 italic font-normal float-right'>cart</Link>
     </div>
     <Outlet/>
     </>

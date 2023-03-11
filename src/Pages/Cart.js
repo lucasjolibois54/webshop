@@ -1,5 +1,5 @@
 import React from 'react'
-import { addCart, delCart } from '../redux/action'
+import { addCart } from '../redux/action'
 import { useSelector, useDispatch } from 'react-redux'
 import { Link, Outlet } from 'react-router-dom'
 
@@ -8,13 +8,6 @@ function Cart() {
   const state = useSelector((state) => state.handleCart);
   const dispatch = useDispatch();
 
-  const handleAdd = (item) => {
-    dispatch(addCart(item));
-  };
-  const handleDelete = (item) => {
-    dispatch(delCart(item));
-  };
-
   const getCartTotal = () => {
     let total = 0;
     for (let idx = 0; idx < state.length; idx++){
@@ -22,6 +15,10 @@ function Cart() {
     }
     return total;
   }
+
+  const handleAdd = (item) => {
+    dispatch(addCart(item));
+  };
 
   const emptyCart = () => {
     return (
@@ -55,13 +52,9 @@ function Cart() {
     )
   }
 
-
-
   return (
     <div className='mx-auto max-w-2xl mt-10 px-4 sm:px-6 lg:max-w-7xl lg:px-8'>
       {state.length === 0 && emptyCart()}
-      {/* {state.length !== 0 && state.map(cartItems)} */}
-      {/* <h1>{ getCartTotal() }.- DKK</h1> */}
       <div className="container mx-auto mt-10">
     <div className="flex shadow-md my-10">
       <div className="w-full md:w-3/4 bg-white px-10 py-10">
