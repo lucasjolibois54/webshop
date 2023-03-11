@@ -1,7 +1,7 @@
 import React from 'react'
 import Nav from '../Components/Nav'
 import { useState, useEffect } from 'react';
-import { Link, Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 import { addCart } from '../redux/action';
 import { useDispatch } from 'react-redux';
 
