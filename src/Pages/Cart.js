@@ -1,5 +1,4 @@
 import React from 'react'
-import { addCart } from '../redux/action'
 import Nav from '../Components/Nav'
 import { useSelector } from 'react-redux'
 import { Link, Outlet } from 'react-router-dom'
